@@ -18,8 +18,8 @@ return PhpCsFixer\Config::create()
                                             'This source file is available under following license:' . PHP_EOL .
                                             '- GNU General Public License v3.0 (GNU GPLv3)' . PHP_EOL .
                                             PHP_EOL .
-                                            ' @copyright  Copyright (c) Studio1 Kommunikation GmbH (http://www.studio1.de)' . PHP_EOL .
-                                            ' @license    https://www.gnu.org/licenses/gpl-3.0.txt'
+                                            '@copyright  Copyright (c) Studio1 Kommunikation GmbH (http://www.studio1.de)' . PHP_EOL .
+                                            '@license    https://www.gnu.org/licenses/gpl-3.0.txt'
                                     ],
 
         // keep aligned = and => operators as they are: do not force aligning, but do not remove it

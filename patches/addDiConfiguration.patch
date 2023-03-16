@@ -1,0 +1,27 @@
+Index: bundles/CoreBundle/DependencyInjection/Configuration.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/bundles/CoreBundle/DependencyInjection/Configuration.php b/bundles/CoreBundle/DependencyInjection/Configuration.php
+--- a/bundles/CoreBundle/DependencyInjection/Configuration.php	
++++ b/bundles/CoreBundle/DependencyInjection/Configuration.php	(date 1673604646885)
+@@ -1835,6 +1835,18 @@
+                                             ->arrayNode('options')
+                                                 ->children()
+                                                     ->scalarNode('label')->info('Nice name for the Pimcore backend.')->end()
++                                                    // Studio1 start
++                                                    ->arrayNode('data')
++                                                        ->children()
++                                                            ->scalarNode('type')->info('')->defaultValue('')->end()
++                                                            ->scalarNode('class')->info('')->defaultValue('')->end()
++                                                            ->scalarNode('attribute')->info('')->defaultValue('')->end()
++                                                            ->scalarNode('languages')->info('')->defaultValue('')->end()
++                                                            ->scalarNode('languagesSetAll')->info('')->defaultValue(false)->end()
++                                                            ->scalarNode('value')->info('')->defaultValue('')->end()
++                                                        ->end()
++                                                    ->end()
++                                                    // Studio1 end
+                                                     ->arrayNode('notes')
+                                                         ->children()
+                                                             ->booleanNode('commentEnabled')->defaultFalse()->info('If enabled a detail window will open when the user executes the transition. In this detail view the user be asked to enter a "comment". This comment then will be used as comment for the notes/events feature.')->end()

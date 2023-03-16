@@ -1,8 +1,12 @@
 {
-  "name": "studio1/template-pimcore",
+  "name": "studio1/workflow-extend",
   "type": "pimcore-bundle",
-  "license": "GPL-3.0-or-later",
-  "description": "TemplateBundle for Pimcore",
+  "description": "This bundles extends pimcores workflow engine and workflow designer with additional features.",
+  "config": {
+    "allow-plugins": {
+      "cweagans/composer-patches": true
+    }
+  },
   "authors": [
     {
       "name": "Studio1 Kommunikation GmbH",
@@ -13,18 +17,26 @@
   ],
   "autoload": {
     "psr-4": {
-      "Studio1\\MiddlewareBundle\\": "src/"
+      "Studio1\\WorkflowExtendBundle\\": "src/"
     }
   },
   "extra": {
     "pimcore": {
       "bundles": [
-        "Studio1\\TemplatePimcoreBundle\\TemplatePimcoreBundle"
+        "Studio1\\WorkflowExtendBundle\\WorkflowExtendBundle"
       ]
+    },
+    "patches": {
+      "pimcore/pimcore": {
+        "WorkFlowExtendBundle extend dependency injection patch": "vendor/studio1/workflow-extend/patches/addDiConfiguration.patch"
+      }
     }
   },
   "require": {
     "pimcore/pimcore": "^10.0",
+    "cweagans/composer-patches": "~1.0",
+    "pimcore/asset-metadata-class-definitions": "~1.2",
+    "pimcore/workflow-designer": "~1.0",
     "php": "^8.0"
   }
 }

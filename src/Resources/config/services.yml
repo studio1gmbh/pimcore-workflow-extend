@@ -9,15 +9,13 @@ services:
         # if you need to do this, you can override this setting on individual services
         public: false
 
-    # controllers are imported separately to make sure they're public
-    # and have a tag that allows actions to type-hint services
-    Studio1\TemplatePimcorenBundle\Controller\:
-        resource: '../../Controller'
+    # event subscribers are imported separately to make sure they're public
+    Studio1\WorkflowExtendBundle\EventSubscriber\:
+        resource: '../../EventSubscriber'
         public: true
-        tags: [ 'controller.service_arguments' ]
 
 # add more services, or override services that need manual wiring
-#    Studio1\TemplatePimcorenBundle\ExampleClass:
+#    Studio1\WorkflowExtendBundle\ExampleClass:
 #        arguments:
 #            - "@service_id"
 #            - "plain_value"

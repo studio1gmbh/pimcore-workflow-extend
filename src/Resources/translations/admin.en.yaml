@@ -1,0 +1,11 @@
+bundle_workflow_extend_data_attribute: Attribute*
+bundle_workflow_extend_data_attribute_tooltip: Attribute that will be changed during the transition
+bundle_workflow_extend_data_class: Class*
+bundle_workflow_extend_data_class_tooltip: MAM- or PIM Class
+bundle_workflow_extend_data_heading: Change data (only assets or objects)
+bundle_workflow_extend_data_languages: Languages
+bundle_workflow_extend_data_languages_set_all: Apply value for all languages
+bundle_workflow_extend_data_languages_set_all_tooltip: The value will be applied for all available languages
+bundle_workflow_extend_data_languages_tooltip: Languages for which the value should be set. Comma separated e.g. (de,de_DE,en,en_US). Not needed, if localized fields are not available or "Apply value for all languages" is set.
+bundle_workflow_extend_data_value: Value
+bundle_workflow_extend_data_value_tooltip: Value that will be set on the given object/attribute

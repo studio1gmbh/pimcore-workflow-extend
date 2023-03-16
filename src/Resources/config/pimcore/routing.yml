@@ -1,4 +1,0 @@
-template-pimcore-bundle:
-    resource: "@TemplatePimcoreBundle/Controller/"
-    type: annotation
-    prefix: /admin/template-pimcore

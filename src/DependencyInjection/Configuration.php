@@ -1,16 +1,6 @@
 <?php
 
-/**
- * Studio1 Kommunikation GmbH
- *
- * This source file is available under following license:
- * - GNU General Public License v3.0 (GNU GPLv3)
- *
- *  @copyright  Copyright (c) Studio1 Kommunikation GmbH (http://www.studio1.de)
- *  @license    https://www.gnu.org/licenses/gpl-3.0.txt
- */
-
-namespace Studio1\TemplatePimcoreBundle\DependencyInjection;
+namespace Studio1\WorkflowExtendBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
@@ -27,7 +17,7 @@ class Configuration implements ConfigurationInterface
      */
     public function getConfigTreeBuilder()
     {
-        $treeBuilder = new TreeBuilder('template_pimcore');
+        $treeBuilder = new TreeBuilder('w_workflow_extend');
 
         // Here you should define the parameters that are allowed to
         // configure your bundle. See the documentation linked above for

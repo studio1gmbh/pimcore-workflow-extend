@@ -1,0 +1,11 @@
+bundle_workflow_extend_data_attribute: Attribut*
+bundle_workflow_extend_data_attribute_tooltip: Attribut, welches während der Transition geändert werden soll
+bundle_workflow_extend_data_class: Klasse*
+bundle_workflow_extend_data_class_tooltip: MAM- bzw. PIM Klasse
+bundle_workflow_extend_data_heading: Daten ändern (nur für Assets oder Objekte)
+bundle_workflow_extend_data_languages: Sprachen
+bundle_workflow_extend_data_languages_set_all: Wert für alle Sprachen übernehmen
+bundle_workflow_extend_data_languages_set_all_tooltip: Wert wird für alle verfügbaren Sprachen übernommen
+bundle_workflow_extend_data_languages_tooltip: Sprachen, für die der Wert gesetzt werden soll. Kommasepariert z.B. (de,de_DE,en,en_US). Wird nicht benötigt, wenn keine Localized Fields vorhanden sind oder "Wert für alle Sprachen übernehmen" gesetzt ist.
+bundle_workflow_extend_data_value: Wert
+bundle_workflow_extend_data_value_tooltip: Wert mit dem das Attribut des Objekts befüllt wird

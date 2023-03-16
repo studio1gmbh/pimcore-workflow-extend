@@ -1,0 +1,10 @@
+# Monolog Configuration
+monolog:
+    channels: ['workflow-extend-bundle']
+    handlers:
+        workflow-extend-bundle:
+            # log all messages (since debug is the lowest level)
+            level: debug
+            type: stream
+            path: '%kernel.logs_dir%/workflow-extend-bundle.log'
+            channels: [ workflow-extend-bundle ]
