@@ -1,7 +1,18 @@
 <?php
 
+/**
+ * Studio1 Kommunikation GmbH
+ *
+ * This source file is available under following license:
+ * - GNU General Public License v3.0 (GNU GPLv3)
+ *
+ * @copyright  Copyright (c) Studio1 Kommunikation GmbH (http://www.studio1.de)
+ * @license    https://www.gnu.org/licenses/gpl-3.0.txt
+ */
+
 namespace Studio1\WorkflowExtendBundle\EventSubscriber;
 
+use Exception;
 use Pimcore\AssetMetadataClassDefinitionsBundle\Helper;
 use Pimcore\AssetMetadataClassDefinitionsBundle\Model\Collections;
 use Pimcore\AssetMetadataClassDefinitionsBundle\Model\Configuration\Dao;
@@ -13,20 +24,16 @@ use Pimcore\Workflow\Transition;
 use Psr\Log\LoggerInterface;
 use Psr\Log\LogLevel;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
-use Symfony\Component\HttpKernel\Event\RequestEvent;
-use Symfony\Component\HttpKernel\KernelEvents;
 use Symfony\Component\Workflow\Event\Event;
 use Symfony\Component\Workflow\Event\TransitionEvent;
 use Symfony\Component\Workflow\Workflow;
 use Symfony\Component\Workflow\WorkflowEvents;
-use Exception;
 
 /**
  * Class SetAttributeSubscriber
  */
 class SetAttributeSubscriber implements EventSubscriberInterface
 {
-
     private LoggerInterface $workflowExtendBundleLogger;
     private Transition $transition;
     private string $workflowName;
@@ -35,6 +42,7 @@ class SetAttributeSubscriber implements EventSubscriberInterface
 
     /**
      * SetAttributeSubscriber constructor.
+     *
      * @param LoggerInterface $workflowExtendBundleLogger
      */
     public function __construct(LoggerInterface $workflowExtendBundleLogger)
@@ -44,6 +52,7 @@ class SetAttributeSubscriber implements EventSubscriberInterface
 
     /**
      * Subscribe to events
+     *
      * @return string[]
      */
     public static function getSubscribedEvents(): array
@@ -55,8 +64,11 @@ class SetAttributeSubscriber implements EventSubscriberInterface
 
     /**
      * Workflow transition event
+     *
      * @param TransitionEvent $event
+     *
      * @return void
+     *
      * @throws Exception
      */
     public function onWorkflowTransition(TransitionEvent $event): void
@@ -100,11 +112,13 @@ class SetAttributeSubscriber implements EventSubscriberInterface
 
         if (empty($class)) {
             $this->log('Could not change data, no class given.', LogLevel::ERROR, true);
+
             return;
         }
 
         if (empty($attribute)) {
             $this->log('Could not change data, no attribute given.', LogLevel::ERROR, true);
+
             return;
         }
 
@@ -123,12 +137,15 @@ class SetAttributeSubscriber implements EventSubscriberInterface
 
     /**
      * Handles data objects in workflow transtion
+     *
      * @param DataObject $dataObject
      * @param string $class
      * @param string $attribute
      * @param mixed $value
      * @param array $languages
+     *
      * @return void
+     *
      * @throws Exception
      */
     private function handleObject(DataObject $dataObject, string $class, string $attribute, mixed $value, array $languages = []): void
@@ -147,7 +164,6 @@ class SetAttributeSubscriber implements EventSubscriberInterface
             throw new Exception('Attribute "' . $attribute . '" does not exist in DataObject class "' . $class . '"');
         }
 
-
         // set value for dataobject
         if (!empty($languages)) {
             foreach ($languages as $language) {
@@ -163,12 +179,15 @@ class SetAttributeSubscriber implements EventSubscriberInterface
 
     /**
      * Handles assets in workflow transtion
+     *
      * @param Asset $asset
      * @param string $class
      * @param string $attribute
      * @param mixed $value
      * @param array $languages
+     *
      * @return void
+     *
      * @throws Exception
      */
     private function handleAsset(Asset $asset, string $class, string $attribute, mixed $value, array $languages = []): void
@@ -214,7 +233,6 @@ class SetAttributeSubscriber implements EventSubscriberInterface
             $asset->save(['versionNote' => 'Workflow: ' . $this->workflowName . ' - Transition: ' . $this->transitionName . '(add metadata class)']);
         }
 
-
         // set the attribute in meta data
         if (!empty($languages)) {
             foreach ($languages as $language) {
@@ -231,10 +249,13 @@ class SetAttributeSubscriber implements EventSubscriberInterface
 
     /**
      * Generic log function
+     *
      * @param string $message
      * @param $loglevel
      * @param bool $throwError
+     *
      * @return void
+     *
      * @throws Exception
      */
     private function log(string $message, $loglevel = LogLevel::INFO, bool $throwError = false): void
@@ -249,6 +270,7 @@ class SetAttributeSubscriber implements EventSubscriberInterface
     /**
      * Fetch available metadata classes
      * inspired by vendor/pimcore/asset-metadata-class-definitions/src/Controller/BackendController.php
+     *
      * @return array
      */
     private function getAvailableAssetMetaClasses(): array
