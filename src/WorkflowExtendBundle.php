@@ -18,11 +18,13 @@ class WorkflowExtendBundle extends AbstractPimcoreBundle
 {
     /**
      * Check if PimcoreWorkflowDesignerBundle is installed
+     *
      * @return bool
      */
     private function isWorkflowDesignerBundleInstalled(): bool
     {
         $bundles = $this->container->getParameter('kernel.bundles');
+
         return isset($bundles['PimcoreWorkflowDesignerBundle']);
     }
 
@@ -34,6 +36,7 @@ class WorkflowExtendBundle extends AbstractPimcoreBundle
         if (!$this->isWorkflowDesignerBundleInstalled()) {
             return [];
         }
+
         return [
             '/bundles/workflowextend/js/pimcore/configuration/item/transitionSettings.js'
         ];
@@ -49,6 +52,7 @@ class WorkflowExtendBundle extends AbstractPimcoreBundle
             $description .= 'and workflow designer ';
         }
         $description .= 'with additional features.';
+
         return $description;
     }
 
