@@ -2,6 +2,8 @@
   "name": "studio1/workflow-extend",
   "type": "pimcore-bundle",
   "description": "This bundles extends pimcores workflow engine and workflow designer with additional features.",
+  "license": "GPL-3.0-or-later",
+  "homepage": "https://github.com/studio1gmbh/pimcore-workflow-extend",
   "config": {
     "allow-plugins": {
       "cweagans/composer-patches": true
