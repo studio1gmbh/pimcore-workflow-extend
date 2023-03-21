@@ -102,13 +102,6 @@ Can be found in `var/log/workflow-extend-bundle.log`.
     - A patch file is needed, since there is no other way to extend the dependency injection configuration of the
       workflow bundle
 
-## Todos
-
-- Adapt the bundle to work with the Pimcore community edition
-    - Remove dependency to enterprise bundles
-    - Check existence of enterprise bundles at runtime
-- Support for documents
-
 ---
 
-Last Modified: 2023-01-13
+Last Modified: 2023-01-20
