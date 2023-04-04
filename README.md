@@ -101,7 +101,12 @@ Can be found in `var/log/workflow-extend-bundle.log`.
     - Adds the `data` option to the workflow configuration
     - A patch file is needed, since there is no other way to extend the dependency injection configuration of the
       workflow bundle
+- [addIDPlaceSettings.patch](patches/addIDPlaceSettings.patch)
+    - Adds the `id` field to the state configuration
+    - A patch file is needed, since there is no other way to extend the place settings of the
+      workflow bundle
+    - ![Backend Configuration](docs/place_settings.png)
 
 ---
 
-Last Modified: 2023-01-20
+Last modified: 2023-04-04

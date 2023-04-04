@@ -30,7 +30,8 @@
     },
     "patches": {
       "pimcore/pimcore": {
-        "WorkFlowExtendBundle extend dependency injection patch": "vendor/studio1/workflow-extend/patches/addDiConfiguration.patch"
+        "WorkFlowExtendBundle extend dependency injection patch": "vendor/studio1/workflow-extend/patches/addDiConfiguration.patch",
+        "WorkFlowExtendBundle extend state settings patch": "vendor/studio1/workflow-extend/patches/addIDPlaceSettings.patch"
       }
     }
   },
