@@ -101,7 +101,10 @@ Can be found in `var/log/workflow-extend-bundle.log`.
     - Adds the `data` option to the workflow configuration
     - A patch file is needed, since there is no other way to extend the dependency injection configuration of the
       workflow bundle
+- [placeSettings.js](src/Resources/public/js/pimcore/configuration/item/placeSettings.js)
+    - Extends the Pimcore Workflow Designer by additional field for the state id
+    - ![Backend Configuration](docs/place_settings.png)
 
 ---
 
-Last Modified: 2023-01-20
+Last modified: 2023-04-06

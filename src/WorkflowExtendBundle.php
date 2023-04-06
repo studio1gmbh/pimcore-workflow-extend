@@ -38,7 +38,8 @@ class WorkflowExtendBundle extends AbstractPimcoreBundle
         }
 
         return [
-            '/bundles/workflowextend/js/pimcore/configuration/item/transitionSettings.js'
+            '/bundles/workflowextend/js/pimcore/configuration/item/transitionSettings.js',
+            '/bundles/workflowextend/js/pimcore/configuration/item/placeSettings.js',
         ];
     }
 
@@ -69,6 +70,6 @@ class WorkflowExtendBundle extends AbstractPimcoreBundle
      */
     public function getVersion()
     {
-        return '1.0.1';
+        return '1.1.0';
     }
 }
