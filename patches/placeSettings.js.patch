@@ -1,0 +1,35 @@
+Index: src/Resources/public/js/pimcore/configuration/item/placeSettings.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Resources/public/js/pimcore/configuration/item/placeSettings.js b/src/Resources/public/js/pimcore/configuration/item/placeSettings.js
+--- a/src/Resources/public/js/pimcore/configuration/item/placeSettings.js
++++ b/src/Resources/public/js/pimcore/configuration/item/placeSettings.js	(date 1694008370166)
+@@ -5,6 +5,9 @@
+
+     initialize: function(placeId, placeData, callback) {
+
++        // Studio1 start
++        placeData.id = placeId;
++        // Studio1 end
+         const data = placeData || {};
+         placeData.permissions = placeData.permissions || [];
+
+@@ -63,7 +66,16 @@
+                 listeners: pimcore.bundle.workflowDesigner.tooltipDefinition.definition.listeners
+             },
+             items: [
++                // Studio1 start
+                 {
++                    xtype: 'textfield',
++                    fieldLabel: t('id'),
++                    name: '__ignore_name',
++                    value: placeData.id,
++                    readOnly: true,
++                    width: 540,
++                }, {
++                // Studio1 end
+                     xtype: 'textfield',
+                     fieldLabel: t('label'),
+                     name: 'label',

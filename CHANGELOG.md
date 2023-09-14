@@ -1,6 +1,14 @@
 # Changelog
 
-All notable changes to the Workflow Extend Bundle will be documented in this file.
+All notable changes will be documented in this file.
+
+| **Bundle Version** | **Pimcore Version** |
+|--------------------|---------------------|
+| 1.x.x              | Pimcore 10          |
+| 2.x.x              | Pimcore 11          |
+
+## [2.0.0] - 2023-09-14
+- Add Pimcore 11 support
 
 ## [1.1.0] - 2023-04-06
 - Added ID to place settings

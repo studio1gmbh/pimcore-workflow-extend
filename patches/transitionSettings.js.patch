@@ -1,0 +1,78 @@
+Index: src/Resources/public/js/pimcore/configuration/item/transitionSettings.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Resources/public/js/pimcore/configuration/item/transitionSettings.js b/src/Resources/public/js/pimcore/configuration/item/transitionSettings.js
+--- a/src/Resources/public/js/pimcore/configuration/item/transitionSettings.js
++++ b/src/Resources/public/js/pimcore/configuration/item/transitionSettings.js	(date 1694684644153)
+@@ -9,6 +9,9 @@
+         data.options = data.options || {};
+         data.options.notes = data.options.notes || {};
+         data.options.notificationSettings = data.options.notificationSettings || [];
++        // Studio1 start
++        data.options.data = data.options.data || [];
++        // Studio1 end
+
+         this.window = new Ext.window.Window({
+             title: t('bundle_wfdesigner_transition_settings'),
+@@ -224,6 +227,59 @@
+                         },
+                         notesPanel
+                     ]
++                }, {
++                    // Studio1 Start
++                    // Add data panel, to select configure data to set during transition
++                    xtype: 'fieldset',
++                    width: '100%',
++                    collapsible: true,
++                    title: t('bundle_workflow_extend_data_heading'),
++                    defaults: {
++                        labelWidth: 130,
++                        listeners: pimcore.bundle.workflowDesigner.tooltipDefinition.definition.listeners
++                    },
++                    items: [
++                        {
++                            xtype: 'textfield',
++                            fieldLabel: t('bundle_workflow_extend_data_class'),
++                            name: 'options.data.class',
++                            value: transitionData.options.data.class,
++                            tooltip: t('bundle_workflow_extend_data_class_tooltip'),
++                            allowBlank: false,
++                            width: 540
++                        }, {
++                            xtype: 'textfield',
++                            fieldLabel: t('bundle_workflow_extend_data_attribute'),
++                            name: 'options.data.attribute',
++                            value: transitionData.options.data.attribute,
++                            tooltip: t('bundle_workflow_extend_data_attribute_tooltip'),
++                            allowBlank: false,
++                            width: 540
++                        }, {
++                            xtype: 'textfield',
++                            fieldLabel: t('bundle_workflow_extend_data_value'),
++                            name: 'options.data.value',
++                            value: transitionData.options.data.value,
++                            tooltip: t('bundle_workflow_extend_data_value_tooltip'),
++                            width: 540
++                        }, {
++                            xtype: 'textfield',
++                            fieldLabel: t('bundle_workflow_extend_data_languages'),
++                            name: 'options.data.languages',
++                            value: transitionData.options.data.languages,
++                            tooltip: t('bundle_workflow_extend_data_languages_tooltip'),
++                            width: 540
++                        }, {
++                            xtype: 'checkbox',
++                            fieldLabel: t('bundle_workflow_extend_data_languages_set_all'),
++                            name: 'options.data.languagesSetAll',
++                            value: transitionData.options.data.languagesSetAll,
++                            inputValue: true,
++                            uncheckedValue: false,
++                            tooltip: t('bundle_workflow_extend_data_languages_set_all_tooltip')
++                        }
++                    ]
++                    // Studio1 End
+                 }
+             ]
+         });
