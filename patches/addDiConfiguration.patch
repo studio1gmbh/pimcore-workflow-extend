@@ -1,12 +1,12 @@
-Index: bundles/CoreBundle/DependencyInjection/Configuration.php
+Index: bundles/CoreBundle/src/DependencyInjection/Configuration.php
 IDEA additional info:
 Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
-diff --git a/bundles/CoreBundle/DependencyInjection/Configuration.php b/bundles/CoreBundle/DependencyInjection/Configuration.php
---- a/bundles/CoreBundle/DependencyInjection/Configuration.php	
-+++ b/bundles/CoreBundle/DependencyInjection/Configuration.php	(date 1673604646885)
-@@ -1835,6 +1835,18 @@
+diff --git a/bundles/CoreBundle/src/DependencyInjection/Configuration.php b/bundles/CoreBundle/src/DependencyInjection/Configuration.php
+--- a/bundles/CoreBundle/src/DependencyInjection/Configuration.php
++++ b/bundles/CoreBundle/src/DependencyInjection/Configuration.php	(date 1694679108847)
+@@ -1463,6 +1463,18 @@
                                              ->arrayNode('options')
                                                  ->children()
                                                      ->scalarNode('label')->info('Nice name for the Pimcore backend.')->end()

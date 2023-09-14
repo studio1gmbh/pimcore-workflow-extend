@@ -1,8 +1,11 @@
 # Studio1® Pimcore Workflow Extend Bundle
 
-This bundle extends the Pimcore Workflow Feature. It adds the possibility to change data during the workflow transition.
+This bundles extends Pimcore's workflow engine and workflow designer with additional features. 
 
-> **Warning:** This bundle is completely untested with the Pimcore communitiy edition and will probably not work.
+It adds the possibility to change data during the workflow transition.
+It also adds a readonly field to place editor of the Pimcore workflow designer to display the state id. 
+
+> **Warning:** This bundle is completely untested with the Pimcore community edition and will probably not work.
 > Further work is needed to make it work with the community edition.
 
 ## Dependencies
@@ -40,11 +43,7 @@ Please check if the patches were applied correctly. If not, you need to remove t
 
 ### Enable Bundle
 
-Enable the bundle as with any other Pimcore bundle.
-
-```bash
-bin/console pimcore:bundle:enable WorkflowExtendBundle
-```
+Enable the bundle as with any other Pimcore bundle, add it `bundle.php`.
 
 ### Uninstall
 
@@ -69,7 +68,7 @@ For Pimcore Enterprise Projects, you can configure the workflow transitions in t
 
 ![Backend Configuration](docs/backend_configuration.png)
 
-In Pimcore Community Edition, you need to populate the `data` option (implemnted by this bundle) in your workflow
+In Pimcore Community Edition, you need to populate the `data` option (implemented by this bundle) in your workflow
 configuration:
 
 ```yaml
@@ -93,7 +92,7 @@ Can be found in `var/log/workflow-extend-bundle.log`.
 
 ## Main components
 
-- [transitionSettings.js](src/Resources/public/js/pimcore/configuration/item/transitionSettings.js)
+- [transitionSettings.js.patch](patches/transitionSettings.js.patch)
     - Extends the Pimcore Workflow Designer by additional fields for the transition settings popup
 - [SetAttributeSubscriber.php](src/EventSubscriber/SetAttributeSubscriber.php)
     - Listens to the `workflow.transition` event and changes the data
@@ -101,10 +100,6 @@ Can be found in `var/log/workflow-extend-bundle.log`.
     - Adds the `data` option to the workflow configuration
     - A patch file is needed, since there is no other way to extend the dependency injection configuration of the
       workflow bundle
-- [placeSettings.js](src/Resources/public/js/pimcore/configuration/item/placeSettings.js)
+- [placeSettings.js.patch](patches/placeSettings.js.patch)
     - Extends the Pimcore Workflow Designer by additional field for the state id
     - ![Backend Configuration](docs/place_settings.png)
-
----
-
-Last modified: 2023-04-06

@@ -31,7 +31,7 @@ class WorkflowExtendBundle extends AbstractPimcoreBundle
     /**
      * @return array|\Pimcore\Routing\RouteReferenceInterface[]|string[]
      */
-    public function getJsPaths()
+    public function getJsPaths(): array
     {
         if (!$this->isWorkflowDesignerBundleInstalled()) {
             return [];
@@ -44,11 +44,11 @@ class WorkflowExtendBundle extends AbstractPimcoreBundle
     }
 
     /**
-     * @return string
+     * @inheritDoc
      */
-    public function getDescription()
+    public function getDescription(): string
     {
-        $description = 'This bundles extends pimcores workflow engine ';
+        $description = 'This bundles extends Pimcore\'s workflow engine ';
         if ($this->isWorkflowDesignerBundleInstalled()) {
             $description .= 'and workflow designer ';
         }
@@ -58,18 +58,18 @@ class WorkflowExtendBundle extends AbstractPimcoreBundle
     }
 
     /**
-     * @return string
+     * @inheritDoc
      */
-    public function getNiceName()
+    public function getNiceName(): string
     {
         return 'Workflow Extend';
     }
 
     /**
-     * @return string
+     * @inheritDoc
      */
-    public function getVersion()
+    public function getVersion(): string
     {
-        return '1.1.0';
+        return '2.0.0';
     }
 }
